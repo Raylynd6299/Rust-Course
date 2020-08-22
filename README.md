@@ -40,6 +40,7 @@ After using the following command,a binary file is generated, this can be used t
 ### Variables
 Las variables en rust son inmutables por default, es decir una vez declaradas nose puede cambiar el valor,
 esto por la concurrencia y debido a que Rust esta enfocado en seguir la programacion Funcional, donde esto es una caracteristica esencial
+
 Variables in rust are immutable by default, that is, once declared, the value cannot be changed,
 This is due to concurrency and because Rust is focused on following Functional programming, where this is an essential feature.
 
