@@ -75,8 +75,8 @@ Rust also use a interpreter of types in build pass, but if we need a especifict 
 + Float
     We have two types of float numbers:
     +  ```Rust
-            f32
-        ```
+        f32
+    ```
     +  ```Rust  
         f64 
     ```
