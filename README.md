@@ -60,11 +60,11 @@ Rust also use a interpreter of types in build pass, but if we need a especifict 
     Rust use to default a 32 bits Integer : 
     ```Rust
         i32 
-    ```,
+    ```
     but we can also use a 64 bits Integer : 
     ```Rust
         i64
-    ```,
+    ```
 + Boolean
   * True
   * False
