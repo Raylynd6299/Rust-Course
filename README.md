@@ -37,6 +37,13 @@ After using the following command,a binary file is generated, this can be used t
 
 ## Rust Lang
 
+#### To print anything in Rust you can use 
+In Rust we use ***Macros*** because Rust is focus to functional programming.
+the trick to print variables in Rust is use ***{}*** in the place to show the variable
+```Rust
+    print!("Any text {}",<var>)
+```
+
 ### Variables
 Las variables en rust son inmutables por default, es decir una vez declaradas nose puede cambiar el valor,
 esto por la concurrencia y debido a que Rust esta enfocado en seguir la programacion Funcional, donde esto es una caracteristica esencial
@@ -110,4 +117,138 @@ Rust also use a interpreter of types in build pass, but if we need a especifict 
         // The index < len (array)
         let Var = <ArrVar>[<index>]
     ```
+### Functions
 
+The functions in Rust is the same like in another programming languages 
+```Rust
+// Sintax
+    fn <FuncName>(<ParmName1>:<DataType>, - - -) -> <DataTypeReturned> {
+        return <Value or Variable>
+    }
+```
+
+### Control Flow 
+#### If/Else or If/else if/else
+In Ruste we can use if/else or if/else if/else statments to Control the Flow of program
+```Rust
+// Sintax
+    if <statement> <condition> <value> {
+
+    }else {
+         
+    }
+// Or 
+    if <statment> <condition> <value> {
+
+    }else if <statement> <condition> <value>  {
+         
+    }else {
+
+    }
+
+```
+Another trick with if in Rustis we can return values out to the if statement
+```Rust 
+    let <VariableName> = 
+        if <condition> {
+            // Code
+            <ReturnValuewithOutSemicolon>
+        }else {
+            // Code
+            <ReturnValuewithOutSemicolon>
+        };
+```
+Note:Don't forget to put the last semicolon
+
+#### loop 
+This Struct is like while in another languages but the only diferrence is that loop not need a condition, in other words with this, we can repeat a block of code any times while the loop can't find a ***break*** statement, and we can continue to the next loop iteration with ***continue***.
+
+```Rust
+// Sintax
+    loop {
+        if a > 18{
+            break;
+        }
+        println!("You're young");
+        a = a - 1;
+    }
+```
+
+loop can return values 
+```Rust
+    let <varName>  = loop {
+        // Code 
+
+        break <ValueOrVariable>;
+    }
+```
+When dealing with nested loops, we need put labels to all the loop with ***'label***.
+we can break any loop with ***break <LabelLoop>***
+```Rust
+    'outer:loop{
+        //Loop
+        'inner:loop{
+            break 'outer;
+        }
+    }
+```
+
+#### while
+This is the same like in another languages
+```Rust
+// Sintax/Example
+    let mut var = 0;
+    while var < 18 {
+        print!("I'm {} years old");
+        var = var + 1;
+    }
+```
+#### For loop
+This loop is a little different to another languages because in Rust the for statement need a iterator to iterate through 
+```Rust
+// Sintax
+    for <vartoThisScope> in <iterator>{
+
+    }
+//Example with a array
+    let arr  = [1,2,3,4,5]
+
+    for value in arr.iter {
+        //Code
+    }
+// Example with a range of numbers
+
+    for numb in 1...11{
+        //output 1,2,3,4,5,6,7,8,9,10
+    }
+```
+
+#### Slice
+This make us a array part of one origin array
+```Rust
+//Example 
+    let xs:[i64,10] = [0;10];
+    println!("{:?}",&xs[0 .. 4]);
+```
+
+
+### Owner Rules
+#### ***Three Rules***
++ Each value in Rust has a variable that's called its owner
++ There can only be one owner at a time 
++ When the owner goes out of scope, the value gets droppped
+
+The next text will be in Spanish, if you need translate the text to much information to owner Rules:
+
+En Rust Como bien se explica en las 3 Reglas anteriores, una unica variable puede tener un valor como tal, esta es de las mayores diferencias con otros lenguajes de programacion,
+puesto que normalmente cuando pasamos valores a una funcion realmente el valor que tenemos en la funcion es una copia del mismo o en su defecto es una direccion de memoria, y al regresar de la funcion podemos trabajar con el valor como si nada pasara, pues en Rust esto no es de esa forma, una vez nosotros pasamos argumentos a la funcion perdemos los valores que estaban en las variables en el scope origen de estas, por lo que se usa pasar la direccion de las variable para evitar perder esta informacion de las variables originales.
+
+To look one Example in code, click [here](./OwnS/OS.rs)
+
+### Data Races
+A data race is similar to a race condition and happens when these three behaviors occur:
++ Two or more pointers access the same data at same time.
++ At least one of the pointers is being used to write to the data.
++ There's no mechanism being used to synchroniza access to data.
+  
+To look one Example in code, click [here](./RaceCond/RC.rs)
