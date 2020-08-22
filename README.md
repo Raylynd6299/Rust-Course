@@ -85,3 +85,29 @@ Rust also use a interpreter of types in build pass, but if we need a especifict 
         f64 
        ```
 + Characters
+  + To use this data type you only need put the letter into simple quotes
+
+#### Compound types
++ Tuples
+    Group together a variety of types
+    ```Rust
+        let <VarName>:(<DataType1>,<DataType2>) = (<Var1>,<Var2>)
+    ```
+    To access a one index, you need to use (.)
+    ```Rust
+        let Var = <TupleVar>.<index>
+    ```
+    To print a tuple you need use ***{:?}*** or ****{:#?}****
+    You can see one example in this Repository
++ Array
+  Every element must have the same type
+  To use:
+    ```Rust
+        let <VarName> = [<Value>,<Value>, ...]
+    ```
+  To access a one index, you need to use (.)
+    ```Rust
+        // The index < len (array)
+        let Var = <ArrVar>[<index>]
+    ```
+
