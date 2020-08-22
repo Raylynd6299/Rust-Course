@@ -73,6 +73,7 @@ Rust also use a interpreter of types in build pass, but if we need a especifict 
         let <VarName>:bool
     ```
 + Float
+    
     We have two types of float numbers:
     +  ```Rust
         f32
