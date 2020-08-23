@@ -252,3 +252,101 @@ A data race is similar to a race condition and happens when these three behavior
 + There's no mechanism being used to synchroniza access to data.
   
 To look one Example in code, click [here](./RaceCond/RC.rs)
+
+### Structs
++ Custom data Type
++ Make up a meanninful group 
++ Build blocks of creating new data types 
+    ```Rust
+        struct User {
+            username:String,
+            email:String,
+        }
+    //How to use
+        let user = User {
+            username : String::from("Username"),
+            email: String::from("Password"),
+        };
+    ```
+To look a Code Example, click [here](./Structs/example.rs)
+
+### Methods
+Functions defined with the context of the structs and First parameter is always &self 
+```Rust
+    impl Rectangle{
+        fn area(&self) -> u32{
+            self.width *self.height
+        }
+    }
+```
+### Enums
+to Enumerations  Enum => (meaning + Data)
+
+To look a Code Example, click [here](./Enums/enum.rs)
+#### Options Enum
++ Scenarios where a value could be something or nothing
+  
++ Options can handle failure at times, instead of panic 
+
+Sometimes it's desirable to catch the failure of some parts of a program instead of calling panic!; this can be accomplished using the Option enum.
+
+The Option<T> enum has two variants:
+
+None, to indicate failure or lack of value, and
+Some(value), a tuple struct that wraps a value with type T.
+
+```Rust
+    enum Options<T>{
+        Some(T),
+        None,
+    }
+// EXample 
+// An integer division that doesn't `panic!`
+    fn checked_division(dividend: i32, divisor: i32) -> Option<i32> {
+        if divisor == 0 {
+            // Failure is represented as the `None` variant
+            None
+        } else {
+            // Result is wrapped in a `Some` variant
+            Some(dividend / divisor)
+        }
+    }
+```
+
+### Matching
+This statement is like switch statement in another languages,
+Compare one value against a series of patterns (This patterns is the powerfull of matching)
+```Rust
+// Sintax
+match <statement> {
+    <patter1> => { },
+    <pattern2> => {},
+    .
+    .
+    .
+}
+
+```
+To look a Code Example, click [here](./Matching/Matchh.rs)
+
+### Error Handling
+Two Types:
++ Recoverable errors - ***Result<T,E>***
++ Unrecoverable errors - ***panic!***
+
+#### Panic Macro
+Bad things happen in code -> Panic
+Program prints a failure message, unwinds, clean stack, and quits
+Common ocurrence: Bugs
+To look a Code Example, click [here](./EH/ErrorHandling.rs)
+
+#### Recoverable Errors
++ Situation wher we can report the error to the user
+  + Example : File not found
++ Result enum to rescue!
+  ```Rust
+    enum Result<T,E> {
+        Ok(T),
+        Err(E),
+    }
+  ```
