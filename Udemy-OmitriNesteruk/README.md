@@ -142,15 +142,15 @@ To see more check [This](./TypesAndData/src/main.rs)
 
 ### If statement
 
-is the same like any programming languaje, but with a little extra, to see more uses [check here](.CF_If.rs)
+is the same like any programming languaje, but with a little extra, to see more uses [check here](./ControlFlow/CF_If.rs)
 
 ### While statement
 
-is the same like any programming languaje, but with a little extra, to see more uses [check here](./CF_While_loop))
+is the same like any programming languaje, but with a little extra, to see more uses [check here](./ControlFlow/CF_While_loop.rs)
 
 ### For statement
 
-is the same like any programming languaje, but with a little extra, to see more uses [check here](./CF_For.rs))
+is the same like any programming languaje, but with a little extra, to see more uses [check here](./ControlFlow/CF_For.rs)
 
 #### If/Else or If/else if/else
 In Ruste we can use if/else or if/else if/else statments to Control the Flow of program
@@ -246,3 +246,10 @@ This loop is a little different to another languages because in Rust the for sta
         //output 1,2,3,4,5,6,7,8,9,10
     }
 ```
+
+#### Match Statment 
+This Control flow structure is similar to Switch in other programming languages but this statement has new and special features like
+
+we can use a iterators to have a slice to refer a group of options 
+
+To see one example [Do click here](./ControlFlow/CF_Match.rs)
